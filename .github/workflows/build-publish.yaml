@@ -15,7 +15,7 @@ on:
 jobs:
   build:
     env:
-      IMAGE_NAME: quay.io/eclipse/che-sidecar-node
+      IMAGE_NAME: quay.io/eclipse/che-sidecar-flutter
     runs-on: ubuntu-latest
     steps:
       - name: Clone source code
