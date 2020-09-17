@@ -26,7 +26,7 @@ RUN mkdir -p ${FLUTTER_HOME} && \
     }\n'\
     >> ${HOME}/.flutter_settings && \
     git clone -b master https://github.com/flutter/flutter.git ${HOME}/sdks/flutter && \
-    cd ${HOME}/sdks/flutter && git checkout 1.22.0-12.1.pre &&
+    cd ${HOME}/sdks/flutter && git checkout 1.22.0-12.1.pre && \
     sdkmanager --update && \
     flutter upgrade && \
     flutter config global --enable-web && \
