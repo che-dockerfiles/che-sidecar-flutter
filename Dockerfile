@@ -14,6 +14,8 @@ USER root
 
 ENV HOME=/home/theia
 
+ENV FLUTTER_VERSION=1.22.0-12.0.pre
+ENV FLUTTER_BRANCH=dev
 ENV FLUTTER_HOME=${HOME}/sdks/flutter 
 ENV FLUTTER_ROOT=${FLUTTER_HOME}
 ENV PATH ${PATH}:${FLUTTER_HOME}/bin:${FLUTTER_HOME}/bin/cache/dart-sdk/bin
@@ -25,8 +27,8 @@ RUN mkdir -p ${FLUTTER_HOME} && \
         "enable-web": true\n\
     }\n'\
     >> ${HOME}/.flutter_settings && \
-    git clone -b master https://github.com/flutter/flutter.git ${HOME}/sdks/flutter && \
-    cd ${HOME}/sdks/flutter && git checkout 1.22.0-12.1.pre && \
+    cd ${FLUTTER_HOME} && wget https://storage.googleapis.com/flutter_infra/releases/${FLUTTER_BRANCH}/linux/flutter_linux_${FLUTTER_VERSION}-${FLUTTER_BRANCH}.tar.xz && \
+    tar -xf flutter_linux_${FLUTTER_VERSION}-${FLUTTER_BRANCH}.tar.xz -C ${HOME}/sdks/
     sdkmanager --update && \
     flutter upgrade && \
     flutter config global --enable-web && \
