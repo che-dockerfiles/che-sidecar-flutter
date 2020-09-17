@@ -28,7 +28,7 @@ RUN mkdir -p ${FLUTTER_HOME} && \
     }\n'\
     >> ${HOME}/.flutter_settings && \
     cd ${FLUTTER_HOME} && wget https://storage.googleapis.com/flutter_infra/releases/${FLUTTER_BRANCH}/linux/flutter_linux_${FLUTTER_VERSION}-${FLUTTER_BRANCH}.tar.xz && \
-    tar -xf flutter_linux_${FLUTTER_VERSION}-${FLUTTER_BRANCH}.tar.xz -C ${HOME}/sdks/
+    tar -xf flutter_linux_${FLUTTER_VERSION}-${FLUTTER_BRANCH}.tar.xz -C ${HOME}/sdks/ && \
     sdkmanager --update && \
     flutter upgrade && \
     flutter config global --enable-web && \
