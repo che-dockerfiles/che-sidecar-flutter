@@ -30,7 +30,7 @@ RUN mkdir -p ${FLUTTER_HOME} && \
     cd ${FLUTTER_HOME} && wget https://storage.googleapis.com/flutter_infra/releases/${FLUTTER_BRANCH}/linux/flutter_linux_${FLUTTER_VERSION}-${FLUTTER_BRANCH}.tar.xz && \
     tar -xf flutter_linux_${FLUTTER_VERSION}-${FLUTTER_BRANCH}.tar.xz -C ${HOME}/sdks/ && \
     sdkmanager --update && \
-    flutter upgrade && \
+    flutter upgrade --force && \
     flutter config global --enable-web && \
     pub global activate webdev && \
     pub global activate grinder && \
